@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PrintoForms</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#00e5b4">
+<meta name="theme-color" content="#f04400">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PrintoForms">
 <link rel="apple-touch-icon" href="icon-192.png">
-<style>:root{--acc:#00e5b4;--acc-dim:rgba(0,229,180,.1);--acc-glow:rgba(0,229,180,.2)}</style>
+<style>:root{--acc:#f04400;--acc-dim:rgba(240,68,0,.1);--acc-glow:rgba(240,68,0,.2)}</style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
@@ -358,7 +358,7 @@ img{display:block;max-width:100%}
   color:#d8dce8;
   min-height:100vh;
 }
-.admin-wrap *{--acc:#00e5b4;--acc-dim:rgba(0,229,180,.1);--acc-glow:rgba(0,229,180,.2);}
+.admin-wrap *{--acc:#f04400;--acc-dim:rgba(240,68,0,.1);--acc-glow:rgba(240,68,0,.2);}
 
 /* Sidebar */
 .a-shell{display:flex;min-height:100vh;align-items:stretch}
@@ -400,7 +400,7 @@ img{display:block;max-width:100%}
 
 .form-card-logo{
   width:44px;height:44px;border-radius:10px;
-  background:var(--acc-dim);border:1px solid rgba(0,229,180,.2);
+  background:var(--acc-dim);border:1px solid rgba(240,68,0,.2);
   display:flex;align-items:center;justify-content:center;
   font-size:1.4em;flex-shrink:0;
 }
@@ -409,7 +409,7 @@ img{display:block;max-width:100%}
   padding:4px 10px;border-radius:20px;
   font-family:'JetBrains Mono',monospace;font-size:.73em;font-weight:600;
 }
-.status-open{background:rgba(0,229,180,.1);color:var(--acc);border:1px solid rgba(0,229,180,.2)}
+.status-open{background:rgba(240,68,0,.1);color:var(--acc);border:1px solid rgba(240,68,0,.2)}
 .status-locked{background:rgba(245,158,11,.1);color:#fbbf24;border:1px solid rgba(245,158,11,.2)}
 .form-card-title{font-weight:700;font-size:1.05em;color:#e2e8f0;margin-bottom:4px;letter-spacing:-.1px}
 .form-card-slug{
@@ -446,7 +446,7 @@ img{display:block;max-width:100%}
   display:flex;align-items:center;gap:8px;
 }
 .builder-section-title::after{
-  content:'';flex:1;height:1px;background:rgba(0,229,180,.15);
+  content:'';flex:1;height:1px;background:rgba(240,68,0,.15);
 }
 
 /* Admin inputs */
@@ -502,7 +502,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 .field-item.expanded{
   border-left-color:var(--acc);
   background:#0d1117;
-  box-shadow:0 0 0 1px rgba(0,229,180,.08),0 4px 16px rgba(0,0,0,.3);
+  box-shadow:0 0 0 1px rgba(240,68,0,.08),0 4px 16px rgba(0,0,0,.3);
 }
 .field-item-header{display:flex;align-items:center;gap:8px;margin-bottom:0;flex-wrap:wrap}
 .field-item.expanded .field-item-header{margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.07)}
@@ -591,13 +591,13 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 /* Rename field selector */
 .rename-field-section{
   margin-top:6px;padding:16px;
-  background:rgba(0,229,180,.04);
-  border:1px solid rgba(0,229,180,.12);
+  background:rgba(240,68,0,.04);
+  border:1px solid rgba(240,68,0,.12);
   border-radius:10px;
 }
 .rename-field-badge{
   display:inline-flex;align-items:center;gap:6px;
-  background:rgba(0,229,180,.1);color:var(--acc);
+  background:rgba(240,68,0,.1);color:var(--acc);
   padding:4px 12px;border-radius:20px;
   font-family:'JetBrains Mono',monospace;font-size:.73em;font-weight:600;
   margin-bottom:10px;
@@ -616,7 +616,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
   animation:fadeUp .3s ease both;cursor:pointer;
   transition:all .2s ease;
 }
-.sub-card:hover{border-color:rgba(0,229,180,.25);background:#1e2438}
+.sub-card:hover{border-color:rgba(240,68,0,.25);background:#1e2438}
 .sub-card-photo{
   flex-shrink:0;
 }
@@ -660,7 +660,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 /* Admin dark/light theme overrides for shared pec-id-card used in entries */
 .admin-wrap .pec-id-card{background:#161b27;border-color:rgba(255,255,255,.08);cursor:pointer}
 .admin-wrap .pec-id-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.4)}
-.admin-wrap .pec-id-card.expanded{border-left-color:var(--acc,#00e5b4);box-shadow:0 0 0 1px rgba(0,229,180,.08),0 4px 20px rgba(0,0,0,.4)}
+.admin-wrap .pec-id-card.expanded{border-left-color:var(--acc,#f04400);box-shadow:0 0 0 1px rgba(240,68,0,.08),0 4px 20px rgba(0,0,0,.4)}
 .admin-wrap .pec-compact-name{color:#e2e8f0}
 .admin-wrap .pec-compact-photo{background:#1e2535;border-color:rgba(255,255,255,.08)}
 .admin-wrap .pec-compact-sub{color:#4b5268}
@@ -711,13 +711,13 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
   transition:all .2s ease;
 }
 .sort-pill:hover{color:#d8dce8;background:rgba(255,255,255,.07)}
-.sort-pill.active{background:var(--acc-dim);color:var(--acc);border-color:rgba(0,229,180,.25)}
+.sort-pill.active{background:var(--acc-dim);color:var(--acc);border-color:rgba(240,68,0,.25)}
 
 /* Admin login page */
 .login-page{
   min-height:100vh;display:flex;align-items:center;justify-content:center;
   background:#080a0f;
-  background-image:radial-gradient(ellipse 600px 500px at 50% -20%,rgba(0,229,180,.06),transparent);
+  background-image:radial-gradient(ellipse 600px 500px at 50% -20%,rgba(240,68,0,.06),transparent);
 }
 .login-box{
   width:100%;max-width:380px;padding:40px;
@@ -728,7 +728,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 }
 .login-logo{
   width:52px;height:52px;border-radius:14px;
-  background:var(--acc-dim);border:1px solid rgba(0,229,180,.25);
+  background:var(--acc-dim);border:1px solid rgba(240,68,0,.25);
   display:flex;align-items:center;justify-content:center;
   font-size:1.5em;margin:0 auto 20px;
 }
@@ -938,7 +938,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 }
 .gp-bar-fill{
   height:100%;width:0%;
-  background:linear-gradient(90deg,#6366f1,#00e5b4);
+  background:linear-gradient(90deg,#6366f1,#f04400);
   border-radius:0 2px 2px 0;
   transition:width .38s ease;
   position:relative;
@@ -1342,7 +1342,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 .form-page[data-theme="dark"] .toast-info .toast-icon{background:#1e3a5f;color:#93c5fd}
 
 /* Spinner */
-.spin{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.15);border-top-color:#00e5b4;animation:spin .6s linear infinite;vertical-align:middle}
+.spin{display:inline-block;width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.15);border-top-color:#f04400;animation:spin .6s linear infinite;vertical-align:middle}
 .spin-lg{width:32px;height:32px;border-width:3px}
 
 /* Empty state */
@@ -1438,10 +1438,10 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 .crop-handle[data-h="e"]{right:-7px;top:50%;transform:translateY(-50%);cursor:e-resize;width:10px;height:24px;border-radius:3px}
 .crop-handle[data-h="w"]{left:-7px;top:50%;transform:translateY(-50%);cursor:w-resize;width:10px;height:24px;border-radius:3px}
 .crop-footer{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:10px;flex-wrap:wrap}
-.crop-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;background:rgba(0,229,180,.1);border:1px solid rgba(0,229,180,.2);font-size:.75em;color:#00e5b4;font-weight:600;font-family:'JetBrains Mono',monospace}
+.crop-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:8px;background:rgba(240,68,0,.1);border:1px solid rgba(240,68,0,.2);font-size:.75em;color:#f04400;font-weight:600;font-family:'JetBrains Mono',monospace}
 .crop-actions{display:flex;gap:8px}
-#applyCropBtn{background:#00e5b4 !important;color:#030f0a !important;font-weight:700 !important;border:none !important;padding:9px 20px !important;border-radius:8px !important;font-size:.84em !important;cursor:pointer;letter-spacing:.2px}
-#applyCropBtn:hover{background:#00ffd0 !important;box-shadow:0 4px 16px rgba(0,229,180,.35) !important}
+#applyCropBtn{background:#f04400 !important;color:#030f0a !important;font-weight:700 !important;border:none !important;padding:9px 20px !important;border-radius:8px !important;font-size:.84em !important;cursor:pointer;letter-spacing:.2px}
+#applyCropBtn:hover{background:#ff6b35 !important;box-shadow:0 4px 16px rgba(240,68,0,.35) !important}
 #cancelCropBtn,#cancelCropBtn2{background:rgba(255,255,255,.08) !important;color:#c8cfe0 !important;border:1px solid rgba(255,255,255,.14) !important;padding:9px 16px !important;border-radius:8px !important;font-size:.84em !important;cursor:pointer}
 #cancelCropBtn:hover,#cancelCropBtn2:hover{background:rgba(255,255,255,.14) !important;color:#fff !important}
 /* Styled file upload zone (public form) */
@@ -1507,7 +1507,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 .resp-stat-pill{
   display:inline-flex;align-items:center;gap:5px;
   padding:5px 12px;border-radius:100px;font-size:.76em;font-weight:700;
-  background:rgba(0,229,180,.08);color:#00e5b4;border:1px solid rgba(0,229,180,.2);
+  background:rgba(240,68,0,.08);color:#f04400;border:1px solid rgba(240,68,0,.2);
   white-space:nowrap;
 }
 .resp-stat-pill.dup{background:rgba(239,68,68,.08);color:#f87171;border-color:rgba(239,68,68,.2)}
@@ -1519,7 +1519,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
   border-radius:16px;padding:0;cursor:pointer;
   transition:all .2s ease;overflow:hidden;
 }
-.dash-form-card:hover{border-color:rgba(0,229,180,.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.dash-form-card:hover{border-color:rgba(240,68,0,.3);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
 .form-card-top{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 12px}
 .form-card-status{
   font-size:.7em;font-weight:700;padding:3px 9px;border-radius:100px;
@@ -1546,7 +1546,7 @@ input:checked+.toggle-track::before{transform:translateX(22px);background:#fff}
 .login-wrap{
   min-height:100vh;display:flex;align-items:center;justify-content:center;
   background:#080a0f;padding:20px;
-  background-image:radial-gradient(ellipse at 50% 0%, rgba(0,229,180,.06) 0%, transparent 60%);
+  background-image:radial-gradient(ellipse at 50% 0%, rgba(240,68,0,.06) 0%, transparent 60%);
 }
 .login-box{
   background:#0e1018;border:1px solid rgba(255,255,255,.08);
@@ -1572,14 +1572,14 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
 .login-left{
   flex:1;padding:48px 40px;display:flex;flex-direction:column;
   background:linear-gradient(145deg,#0a1628 0%,#0d1f1a 100%);
-  border-left:1px solid rgba(0,229,180,.1);
+  border-left:1px solid rgba(240,68,0,.1);
 }
 .login-left-logo{margin-bottom:24px}
 .login-left-title{font-size:1.7em;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:8px}
 .login-left-sub{font-size:.88em;color:#4a6580;margin-bottom:36px;line-height:1.5}
 .login-features{display:flex;flex-direction:column;gap:12px;flex:1}
 .login-feat{display:flex;align-items:center;gap:10px;font-size:.84em;color:#6b8a9a;font-weight:500}
-.login-feat-dot{width:6px;height:6px;border-radius:50%;background:#00e5b4;flex-shrink:0}
+.login-feat-dot{width:6px;height:6px;border-radius:50%;background:#f04400;flex-shrink:0}
 .login-left-footer{font-size:.72em;color:#2a3a4a;font-family:'JetBrains Mono',monospace;margin-top:32px}
 .login-right{
   width:360px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
@@ -1588,7 +1588,7 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
 .login-box{width:100%}
 .login-logo{
   width:52px;height:52px;border-radius:14px;
-  background:rgba(0,229,180,.08);border:1px solid rgba(0,229,180,.2);
+  background:rgba(240,68,0,.08);border:1px solid rgba(240,68,0,.2);
   display:flex;align-items:center;justify-content:center;
   margin:0 auto 20px;
 }
@@ -1596,7 +1596,7 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
 .login-sub{font-size:.8em;color:#4a5370;text-align:center;margin-bottom:24px}
 @media(max-width:660px){
   .login-split{flex-direction:column;border-radius:0;box-shadow:none}
-  .login-right{width:100%!important;padding:32px 24px;border-bottom:1px solid rgba(0,229,180,.1)}
+  .login-right{width:100%!important;padding:32px 24px;border-bottom:1px solid rgba(240,68,0,.1)}
   .login-left{padding:28px 24px;border-left:none}
 }
 
@@ -1610,7 +1610,7 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
   border-radius:16px;padding:20px 22px;
   transition:border-color .2s ease;
 }
-.stat-box:hover{border-color:rgba(0,229,180,.2)}
+.stat-box:hover{border-color:rgba(240,68,0,.2)}
 .stat-num{font-size:2.1em;font-weight:800;color:#e2e8f0;line-height:1;margin-bottom:6px;font-family:'Plus Jakarta Sans',sans-serif}
 .stat-label{font-size:.72em;color:#4a5370;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 .stat-icon{font-size:1.1em;margin-bottom:8px;color:var(--acc)}
@@ -1624,7 +1624,7 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
   border-radius:18px;overflow:hidden;cursor:pointer;
   transition:all .22s ease;display:flex;flex-direction:column;
 }
-.dash-form-card:hover{border-color:rgba(0,229,180,.28);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.4)}
+.dash-form-card:hover{border-color:rgba(240,68,0,.28);transform:translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.4)}
 .form-card-top{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 12px}
 .form-card-logo{
   width:42px;height:42px;border-radius:11px;
@@ -1663,7 +1663,7 @@ input[type=color]{width:100%;height:100%;border:none;cursor:pointer;background:n
   transition:all .18s ease;cursor:pointer;margin-bottom:2px;
 }
 .a-nav-item:hover{color:#c8d0e0;background:rgba(255,255,255,.04)}
-.a-nav-item.active{color:var(--acc);background:rgba(0,229,180,.08);border:1px solid rgba(0,229,180,.12)}
+.a-nav-item.active{color:var(--acc);background:rgba(240,68,0,.08);border:1px solid rgba(240,68,0,.12)}
 .a-nav-item .icon{font-size:1em;width:18px;text-align:center;flex-shrink:0}
 .a-sidebar-foot{padding:14px 20px;border-top:1px solid rgba(255,255,255,.05);font-family:'JetBrains Mono',monospace;font-size:.72em;color:#2e3650}
 
@@ -2750,7 +2750,7 @@ function renderPresets() {
         ${presets.map((p, i) => `
           <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:12px">
             <div style="display:flex;align-items:center;gap:14px">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,229,180,.1);border:1px solid rgba(0,229,180,.2);display:flex;align-items:center;justify-content:center;font-size:1.1em">${p.icon||'📋'}</div>
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(240,68,0,.1);border:1px solid rgba(240,68,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.1em">${p.icon||'📋'}</div>
               <div>
                 <div style="font-weight:600;font-size:.95em">${p.title}</div>
                 <div style="font-size:.76em;color:#64748b;margin-top:2px">
@@ -3990,13 +3990,13 @@ function showPhotoDownloadModal(slug) {
           <span style="font-size:.82em;color:#5a6177;font-family:'JetBrains Mono',monospace" id="dl-pct-text">0%</span>
         </div>
         <div style="height:6px;background:rgba(255,255,255,.07);border-radius:100px;overflow:hidden;margin-bottom:8px">
-          <div id="dl-progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#00e5b4);border-radius:100px;transition:width .4s ease"></div>
+          <div id="dl-progress-bar" style="height:100%;width:0%;background:linear-gradient(90deg,#6366f1,#f04400);border-radius:100px;transition:width .4s ease"></div>
         </div>
         <div style="font-size:.76em;color:#4a5370;font-family:'JetBrains Mono',monospace" id="dl-detail-text">Preparing…</div>
       </div>
 
-      <div id="dl-done-wrap" style="display:none;margin-top:16px;padding:16px;background:rgba(0,229,180,.06);border:1px solid rgba(0,229,180,.15);border-radius:10px">
-        <div style="font-size:.88em;font-weight:700;color:#00e5b4;margin-bottom:8px">Photos ready in Drive!</div>
+      <div id="dl-done-wrap" style="display:none;margin-top:16px;padding:16px;background:rgba(240,68,0,.06);border:1px solid rgba(240,68,0,.15);border-radius:10px">
+        <div style="font-size:.88em;font-weight:700;color:#f04400;margin-bottom:8px">Photos ready in Drive!</div>
         <div style="font-size:.78em;color:#5a6177;margin-bottom:14px;line-height:1.5">
           Open the folder → select all files (Ctrl+A) → right-click → Download
         </div>
@@ -4165,7 +4165,7 @@ async function loadJobHistory() {
       return;
     }
 
-    const statusColor = s => s === 'ready' ? '#00e5b4' : s === 'running' ? '#fbbf24' : '#f87171';
+    const statusColor = s => s === 'ready' ? '#f04400' : s === 'running' ? '#fbbf24' : '#f87171';
     const statusIcon  = s => s === 'ready' ? '✓' : s === 'running' ? '⏳' : '✗';
     const timeAgo = ts => {
       if (!ts) return '—';
@@ -4184,7 +4184,7 @@ async function loadJobHistory() {
           <div style="color:#3d4560;font-size:.9em">${h.processed !== undefined ? h.processed + '/' : ''}${h.total} photos · ${timeAgo(h.startedAt)}</div>
         </div>
         ${h.status === 'ready'
-          ? `<a href="${h.folderUrl}" target="_blank" style="flex-shrink:0;padding:4px 9px;border-radius:5px;background:rgba(0,229,180,.1);color:#00e5b4;border:1px solid rgba(0,229,180,.2);text-decoration:none;font-size:.88em">Open</a>`
+          ? `<a href="${h.folderUrl}" target="_blank" style="flex-shrink:0;padding:4px 9px;border-radius:5px;background:rgba(240,68,0,.1);color:#f04400;border:1px solid rgba(240,68,0,.2);text-decoration:none;font-size:.88em">Open</a>`
           : h.status === 'running'
           ? `<span style="flex-shrink:0;padding:4px 9px;border-radius:5px;background:rgba(251,191,36,.08);color:#fbbf24;border:1px solid rgba(251,191,36,.2);font-size:.88em">Running</span>`
           : ''
@@ -6943,14 +6943,14 @@ route();
             </g>
             <!-- LEFT FINGER -->
             <g>
-              <circle r="10" fill="white" stroke="#00e5b4" stroke-width="2"/>
+              <circle r="10" fill="white" stroke="#f04400" stroke-width="2"/>
               <animateTransform attributeName="transform" type="translate"
                 values="85,155;70,140;85,155"
                 dur="2s" repeatCount="indefinite"/>
             </g>
             <!-- RIGHT FINGER -->
             <g>
-              <circle r="10" fill="white" stroke="#00e5b4" stroke-width="2"/>
+              <circle r="10" fill="white" stroke="#f04400" stroke-width="2"/>
               <animateTransform attributeName="transform" type="translate"
                 values="135,155;150,140;135,155"
                 dur="2s" repeatCount="indefinite"/>
@@ -6985,8 +6985,8 @@ route();
     <div style="display:flex;align-items:center;gap:10px;margin:10px 0 4px;padding:0 2px">
       <span style="font-size:.72em;color:#5a6177;flex-shrink:0;font-family:'JetBrains Mono',monospace">Zoom</span>
       <input type="range" id="cropZoomSlider" min="100" max="400" value="100" step="5"
-        style="flex:1;height:4px;accent-color:#00e5b4;cursor:pointer">
-      <span id="cropZoomLabel" style="font-size:.72em;color:#00e5b4;width:36px;text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600">100%</span>
+        style="flex:1;height:4px;accent-color:#f04400;cursor:pointer">
+      <span id="cropZoomLabel" style="font-size:.72em;color:#f04400;width:36px;text-align:right;font-family:'JetBrains Mono',monospace;font-weight:600">100%</span>
     </div>
     <div style="font-size:.68em;color:#3d4560;text-align:center;margin-bottom:4px;font-family:'JetBrains Mono',monospace">
       Drag background to pan · Scroll or pinch to zoom · Drag box to reposition
