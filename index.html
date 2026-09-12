@@ -2724,6 +2724,47 @@ function savePresets(list) {
   localStorage.setItem('fbp_presets', JSON.stringify(list));
 }
 
+// Generate initials from title (e.g., "Parent Name" -> "PN")
+function getInitials(title) {
+  if (!title) return '??';
+  const words = title.trim().split(/\s+/).filter(w => w.length > 0);
+  if (words.length === 0) return '??';
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+}
+
+// Deterministic color generator - same title always produces same color
+function getColorForTitle(title) {
+  const colors = [
+    '#2563eb', // blue
+    '#7c3aed', // purple
+    '#059669', // green
+    '#e11d48', // red
+    '#ea580c', // orange
+    '#0891b2', // cyan
+    '#9333ea', // violet
+    '#dc2626', // crimson
+    '#0284c7', // sky
+    '#16a34a', // emerald
+  ];
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    hash = ((hash << 5) - hash) + title.charCodeAt(i);
+    hash |= 0;
+  }
+  return colors[Math.abs(hash) % colors.length];
+}
+
+// Render avatar with initials or emoji
+function renderPresetAvatar(preset) {
+  if (preset.icon && preset.icon.trim() !== '') {
+    return `<div style="width:36px;height:36px;border-radius:8px;background:rgba(240,68,0,.1);border:1px solid rgba(240,68,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.1em">${preset.icon}</div>`;
+  }
+  const initials = getInitials(preset.title);
+  const color = getColorForTitle(preset.title);
+  return `<div style="width:36px;height:36px;border-radius:8px;background:${color}20;border:1px solid ${color}40;display:flex;align-items:center;justify-content:center;font-size:.85em;font-weight:700;color:${color}">${initials}</div>`;
+}
+
 function renderPresets() {
   const presets = getPresets();
   document.getElementById('root').innerHTML = adminShell(`
@@ -2750,7 +2791,7 @@ function renderPresets() {
         ${presets.map((p, i) => `
           <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:12px">
             <div style="display:flex;align-items:center;gap:14px">
-              <div style="width:36px;height:36px;border-radius:8px;background:rgba(240,68,0,.1);border:1px solid rgba(240,68,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.1em">${p.icon||'📋'}</div>
+              ${renderPresetAvatar(p)}
               <div>
                 <div style="font-weight:600;font-size:.95em">${p.title}</div>
                 <div style="font-size:.76em;color:#64748b;margin-top:2px">
@@ -2773,8 +2814,11 @@ function renderPresets() {
         <div style="font-size:1.05em;font-weight:700;margin-bottom:20px" id="preset-modal-title">New Preset</div>
 
         <div style="margin-bottom:14px">
-          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Icon (emoji)</label>
-          <input id="pm-icon" maxlength="4" placeholder="📋" style="width:60px;padding:8px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:inherit;font-size:1.2em;text-align:center">
+          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Icon (emoji) - optional</label>
+          <div style="display:flex;align-items:center;gap:12px">
+            <input id="pm-icon" maxlength="4" placeholder="Leave empty for auto-initials" style="width:60px;padding:8px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:inherit;font-size:1.2em;text-align:center">
+            <div style="font-size:.75em;color:#64748b;line-height:1.4">Leave empty to auto-generate initials from field label</div>
+          </div>
         </div>
         <div style="margin-bottom:14px">
           <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Field Label *</label>
@@ -2848,7 +2892,9 @@ function savePresetFromModal() {
   if (!title) { alert('Please enter a field label.'); return; }
   const type     = document.getElementById('pm-type')?.value || 'text';
   const required = document.getElementById('pm-required')?.checked || false;
-  const icon     = (document.getElementById('pm-icon')?.value || '📋').trim() || '📋';
+  const iconVal  = (document.getElementById('pm-icon')?.value || '').trim();
+  // Only store icon if user provided one; empty string means use auto-initials
+  const icon     = iconVal !== '' ? iconVal : '';
   const choicesRaw = document.getElementById('pm-choices')?.value || '';
   const choices  = ['dropdown','radio','checkbox'].includes(type)
     ? choicesRaw.split('\n').map(c=>c.trim()).filter(Boolean)
@@ -2903,8 +2949,9 @@ function togglePresetPicker() {
     } else {
       list.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:8px">` +
         presets.map((p, i) => `
-          <button onclick="addFieldFromPreset(${i})" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:var(--txt,#e2e8f0);font-size:.8em;cursor:pointer;font-family:inherit">
-            ${p.icon} ${p.title}
+          <button onclick="addFieldFromPreset(${i})" style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:var(--txt,#e2e8f0);font-size:.8em;cursor:pointer;font-family:inherit">
+            ${renderPresetAvatar(p)}
+            <span>${p.title}</span>
           </button>`).join('') + `</div>`;
     }
   }
