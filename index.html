@@ -277,6 +277,13 @@ img{display:block;max-width:100%}
 .admin-wrap[data-theme="light"] .form-card-title{color:#111827}
 .admin-wrap[data-theme="light"] .form-card-meta{color:#6b7280;border-top-color:#f3f4f6}
 .admin-wrap[data-theme="light"] .resp-toolbar{background:#f9fafb;border-color:#e5e7eb}
+.admin-wrap[data-theme="light"] .preset-card{background:#fff;border-color:#e5e7eb;color:#1a1d2e}
+.admin-wrap[data-theme="light"] .preset-title{color:#1a1d2e}
+.admin-wrap[data-theme="light"] .preset-meta{color:#6b7280}
+.admin-wrap[data-theme="light"] .preset-modal-card{background:#fff;border-color:#e5e7eb;color:#1a1d2e}
+.admin-wrap[data-theme="light"] .preset-modal-title{color:#1a1d2e}
+.admin-wrap[data-theme="light"] .preset-modal-label{color:#374151}
+.admin-wrap[data-theme="light"] .preset-modal-hint{color:#6b7280}
 .admin-wrap[data-theme="light"] .resp-toolbar-search input{background:#fff;border-color:#d1d5db;color:#1a1d2e}
 .admin-wrap[data-theme="light"] .login-box{background:#fff;border-color:#e5e7eb}
 .admin-wrap[data-theme="light"] .login-title{color:#1a1d2e}
@@ -331,6 +338,13 @@ img{display:block;max-width:100%}
 .admin-wrap[data-theme="dark"] .form-card-slug,.admin-wrap[data-theme="dark"] .dash-form-card .form-card-slug{color:#8b949e !important}
 .admin-wrap[data-theme="dark"] .form-card-meta,.admin-wrap[data-theme="dark"] .dash-form-card .form-card-meta{color:#8b949e !important;border-top-color:#30363d !important}
 .admin-wrap[data-theme="dark"] .form-card-top .form-card-logo{background:rgba(240,68,0,.12);border-color:rgba(240,68,0,.25)}
+.admin-wrap[data-theme="dark"] .preset-card{background:#161b22;border-color:#30363d;color:#f0f6fc}
+.admin-wrap[data-theme="dark"] .preset-title{color:#f0f6fc}
+.admin-wrap[data-theme="dark"] .preset-meta{color:#8b949e}
+.admin-wrap[data-theme="dark"] .preset-modal-card{background:#161b22;border-color:#30363d;color:#f0f6fc}
+.admin-wrap[data-theme="dark"] .preset-modal-title{color:#f0f6fc}
+.admin-wrap[data-theme="dark"] .preset-modal-label{color:#c9d1d9}
+.admin-wrap[data-theme="dark"] .preset-modal-hint{color:#8b949e}
 .admin-wrap[data-theme="dark"] .sub-card{background:#161b22;border-color:#30363d}
 .admin-wrap[data-theme="dark"] .sub-card:hover{border-color:#f04400;background:#1c2128}
 .admin-wrap[data-theme="dark"] .sub-card-no-photo{background:#21262d;color:#484f58}
@@ -2926,12 +2940,12 @@ function renderPresets() {
       </div>` : `
       <div style="display:grid;gap:10px;margin-top:4px">
         ${presets.map((p, i) => `
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:12px">
+          <div class="preset-card" style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:12px">
             <div style="display:flex;align-items:center;gap:14px">
               ${renderPresetAvatar(p)}
               <div>
-                <div style="font-weight:600;font-size:.95em">${p.title}</div>
-                <div style="font-size:.76em;color:#64748b;margin-top:2px">
+                <div class="preset-title" style="font-weight:600;font-size:.95em">${p.title}</div>
+                <div class="preset-meta" style="font-size:.76em;margin-top:2px">
                   ${FIELD_TYPES.find(t=>t.val===p.type)?.label||p.type}
                   ${p.required?'· Required':''}
                   ${p.choices&&p.choices.length?'· '+p.choices.length+' choices':''}
@@ -2947,22 +2961,22 @@ function renderPresets() {
 
     <!-- Modal -->
     <div id="preset-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;display:none;align-items:center;justify-content:center">
-      <div style="background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:16px;padding:28px;width:100%;max-width:440px;margin:20px">
-        <div style="font-size:1.05em;font-weight:700;margin-bottom:20px" id="preset-modal-title">New Preset</div>
+      <div class="preset-modal-card" style="background:var(--card,#1e293b);border:1px solid var(--bdr,#334155);border-radius:16px;padding:28px;width:100%;max-width:440px;margin:20px">
+        <div class="preset-modal-title" style="font-size:1.05em;font-weight:700;margin-bottom:20px" id="preset-modal-title">New Preset</div>
 
         <div style="margin-bottom:14px">
-          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Icon (emoji) - optional</label>
+          <label class="preset-modal-label" style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Icon (emoji) - optional</label>
           <div style="display:flex;align-items:center;gap:12px">
             <input id="pm-icon" maxlength="4" placeholder="Leave empty for auto-initials" style="width:60px;padding:8px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:inherit;font-size:1.2em;text-align:center">
-            <div style="font-size:.75em;color:#64748b;line-height:1.4">Leave empty to auto-generate initials from field label</div>
+            <div class="preset-modal-hint" style="font-size:.75em;line-height:1.4">Leave empty to auto-generate initials from field label</div>
           </div>
         </div>
         <div style="margin-bottom:14px">
-          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Field Label *</label>
+          <label class="preset-modal-label" style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Field Label *</label>
           <input id="pm-title" placeholder="e.g. Full Name" style="width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:inherit;font-size:.9em;box-sizing:border-box">
         </div>
         <div style="margin-bottom:14px">
-          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Field Type</label>
+          <label class="preset-modal-label" style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Field Type</label>
           <select id="pm-type" class="field-type-select" style="width:100%" onchange="updatePresetChoicesVisibility()">
             ${FIELD_TYPES.map(t=>`<option value="${t.val}">${t.label}</option>`).join('')}
           </select>
@@ -2973,7 +2987,7 @@ function renderPresets() {
           </label>
         </div>
         <div id="pm-choices-wrap" style="display:none;margin-bottom:14px">
-          <label style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Choices (one per line)</label>
+          <label class="preset-modal-label" style="font-size:.8em;color:#94a3b8;display:block;margin-bottom:5px">Choices (one per line)</label>
           <textarea id="pm-choices" rows="4" placeholder="Option 1&#10;Option 2&#10;Option 3" style="width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--bdr,#334155);background:var(--bg2,#0f172a);color:inherit;font-size:.85em;box-sizing:border-box;resize:vertical"></textarea>
         </div>
 
